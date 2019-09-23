@@ -10,7 +10,7 @@ import {
 export default (state = {}, action) => {
     switch (action.type) {
         case CREATE_STREAM:
-            return { ...state, [action.payload.id]: action.payload};
+            return { ...state, [action.payload]: action.payload};
         case FETCH_STREAM:
             return { ...state, [action.payload.id]: action.payload};
         case FETCH_STREAMS:

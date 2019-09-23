@@ -27,25 +27,25 @@ export const createStream = formValues => async dispatch => {
 };
 
 export const fetchStreams = () => async dispatch => {
-    const response = await streams.get('/sreams');
+    const response = await streams.get('/streams');
 
-    dispatch({tyle: FETCH_STREAMS, payload: response.data});
+    dispatch({type: FETCH_STREAMS, payload: response.data});
 };
 
 export const fetchStream = (id) => async dispatch => {
-    const response = await streams.get(`/sreams/${id}`);
+    const response = await streams.get(`/streams/${id}`);
 
-    dispatch({tyle: FETCH_STREAM, payload: response.data});
+    dispatch({type: FETCH_STREAM, payload: response.data});
 };
 
 export const deleteStream = (id) => async dispatch => {
-    await streams.delete(`/sreams/${id}`);
+    await streams.delete(`/streams/${id}`);
 
-    dispatch({tyle: DELETE_STREAM, payload: id});
+    dispatch({type: DELETE_STREAM, payload: id});
 };
 
 export const editStream = (id, formValues) => async dispatch => {
-    const response = await streams.put(`/sreams/${id}`, formValues);
+    const response = await streams.put(`/streams/${id}`, formValues);
 
-    dispatch({tyle: EDIT_STREAM, payload: response.data});
+    dispatch({type: EDIT_STREAM, payload: response.data});
 };
